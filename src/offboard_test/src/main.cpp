@@ -37,7 +37,7 @@ int main(int argc,char **argv)
             ("mavros/set_mode");
 
     
-    ros::Rate rate(30.0);
+    ros::Rate rate(50);
 
     while(ros::ok() && !current_state.connected){
         ros::spinOnce();
@@ -45,13 +45,14 @@ int main(int argc,char **argv)
     }
 
     geometry_msgs::PoseStamped pose;
-    pose.pose.position.x = 0;
-    pose.pose.position.y = 0;
-    pose.pose.position.z = 0;
+
 
     //send a few setpoints before starting
-    for(int i = 100; ros::ok() && i > 0; --i){
+    for(int i = 200; ros::ok() && i > 0; --i){
         local_pos_pub.publish(pose);
+            pose.pose.position.x = 0;
+        pose.pose.position.y = 0;
+        pose.pose.position.z += 0.01;
         ros::spinOnce();
         rate.sleep();
     }

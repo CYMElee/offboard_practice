@@ -13,8 +13,8 @@ void state_cb(const mavros_msgs::State::ConstPtr& msg){
     current_state = *msg;
 }
 
-geometry_msgs::Pose current_position;
-void cur_pos(const geometry_msgs::Pose::ConstPtr& msg){
+geometry_msgs::PoseStamped current_position;
+void cur_pos(const geometry_msgs::PoseStamped::ConstPtr& msg){
     current_position = *msg;
 }
 
@@ -28,7 +28,7 @@ int main(int argc,char **argv)
     ros::Subscriber state_sub = nh.subscribe<mavros_msgs::State>
             ("mavros/state",1,state_cb);
     
-    ros::Publisher local_pos_pub = nh.advertise<geometry_msgs::Pose>
+    ros::Publisher local_pos_pub = nh.advertise<geometry_msgs::PoseStamped>
             ("mavros/setpoint_position/local",10);
 
     ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>
@@ -44,17 +44,17 @@ int main(int argc,char **argv)
         rate.sleep();
     }
 
-    geometry_msgs::Pose pose;
-    pose.position.x = 0;
-    pose.position.y = 0;
-    pose.position.z = 0;
+    geometry_msgs::PoseStamped pose;
+    pose.pose.position.x = 0;
+    pose.pose.position.y = 0;
+    pose.pose.position.z = 0;
 
     //send a few setpoints before starting
     for(int i = 200; ros::ok() && i > 0; --i){
         local_pos_pub.publish(pose);
-        pose.position.x = 0;
-        pose.position.y = 0;
-        pose.position.z += 0.01;
+        pose.pose.position.x = 0;
+        pose.pose.position.y = 0;
+        pose.pose.position.z += 0.01;
         ros::spinOnce();
         rate.sleep();
     }

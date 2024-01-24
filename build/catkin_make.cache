@@ -1,2 +1,2 @@
 offboard_test
--DCMAKE_BUILD_TYPE=RelWithDebInfo -DCATKIN_DEVEL_PREFIX=/home/lee/workspace/ROS_WS/offboard_practice/devel -DCMAKE_INSTALL_PREFIX=/home/lee/workspace/ROS_WS/offboard_practice/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/lee/workspace/ROS_WS/offboard_practice/devel -DCMAKE_INSTALL_PREFIX=/home/lee/workspace/ROS_WS/offboard_practice/install -G Unix Makefiles

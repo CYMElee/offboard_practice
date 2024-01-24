@@ -1,0 +1,8 @@
+prefix=/home/lee/workspace/ROS_WS/offboard_practice/devel
+
+Name: offboard_test
+Description: Description of offboard_test
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

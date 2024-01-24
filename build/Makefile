@@ -285,6 +285,19 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
+# Target rules for targets named offboard
+
+# Build rule for target.
+offboard: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 offboard
+.PHONY : offboard
+
+# fast build rule for target.
+offboard/fast:
+	$(MAKE) -f offboard_test/CMakeFiles/offboard.dir/build.make offboard_test/CMakeFiles/offboard.dir/build
+.PHONY : offboard/fast
+
+#=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_py
 
 # Build rule for target.
@@ -826,6 +839,7 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... offboard"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"

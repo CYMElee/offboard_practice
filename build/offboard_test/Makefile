@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+offboard_test/CMakeFiles/offboard.dir/rule:
+	cd /home/lee/workspace/ROS_WS/offboard_practice/build && $(MAKE) -f CMakeFiles/Makefile2 offboard_test/CMakeFiles/offboard.dir/rule
+.PHONY : offboard_test/CMakeFiles/offboard.dir/rule
+
+# Convenience name for target.
+offboard: offboard_test/CMakeFiles/offboard.dir/rule
+
+.PHONY : offboard
+
+# fast build rule for target.
+offboard/fast:
+	cd /home/lee/workspace/ROS_WS/offboard_practice/build && $(MAKE) -f offboard_test/CMakeFiles/offboard.dir/build.make offboard_test/CMakeFiles/offboard.dir/build
+.PHONY : offboard/fast
+
+# Convenience name for target.
 offboard_test/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
 	cd /home/lee/workspace/ROS_WS/offboard_practice/build && $(MAKE) -f CMakeFiles/Makefile2 offboard_test/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 .PHONY : offboard_test/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
@@ -767,6 +782,33 @@ sensor_msgs_generate_messages_eus/fast:
 	cd /home/lee/workspace/ROS_WS/offboard_practice/build && $(MAKE) -f offboard_test/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make offboard_test/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
 
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	cd /home/lee/workspace/ROS_WS/offboard_practice/build && $(MAKE) -f offboard_test/CMakeFiles/offboard.dir/build.make offboard_test/CMakeFiles/offboard.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	cd /home/lee/workspace/ROS_WS/offboard_practice/build && $(MAKE) -f offboard_test/CMakeFiles/offboard.dir/build.make offboard_test/CMakeFiles/offboard.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	cd /home/lee/workspace/ROS_WS/offboard_practice/build && $(MAKE) -f offboard_test/CMakeFiles/offboard.dir/build.make offboard_test/CMakeFiles/offboard.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -775,6 +817,7 @@ help:
 	@echo "... depend"
 	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... offboard"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
@@ -820,6 +863,9 @@ help:
 	@echo "... uuid_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

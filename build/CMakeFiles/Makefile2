@@ -136,7 +136,7 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 # Directory level rules for directory offboard_test
 
 # Recursive "all" directory target.
-offboard_test/all:
+offboard_test/all: offboard_test/CMakeFiles/offboard.dir/all
 
 .PHONY : offboard_test/all
 
@@ -146,6 +146,7 @@ offboard_test/preinstall:
 .PHONY : offboard_test/preinstall
 
 # Recursive "clean" directory target.
+offboard_test/clean: offboard_test/CMakeFiles/offboard.dir/clean
 offboard_test/clean: offboard_test/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
 offboard_test/clean: offboard_test/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
 offboard_test/clean: offboard_test/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
@@ -432,6 +433,33 @@ gtest: gtest/googletest/CMakeFiles/gtest.dir/rule
 gtest/googletest/CMakeFiles/gtest.dir/clean:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/clean
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/clean
+
+#=============================================================================
+# Target rules for target offboard_test/CMakeFiles/offboard.dir
+
+# All Build rule for target.
+offboard_test/CMakeFiles/offboard.dir/all:
+	$(MAKE) -f offboard_test/CMakeFiles/offboard.dir/build.make offboard_test/CMakeFiles/offboard.dir/depend
+	$(MAKE) -f offboard_test/CMakeFiles/offboard.dir/build.make offboard_test/CMakeFiles/offboard.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lee/workspace/ROS_WS/offboard_practice/build/CMakeFiles --progress-num=9,10 "Built target offboard"
+.PHONY : offboard_test/CMakeFiles/offboard.dir/all
+
+# Build rule for subdir invocation for target.
+offboard_test/CMakeFiles/offboard.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lee/workspace/ROS_WS/offboard_practice/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 offboard_test/CMakeFiles/offboard.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lee/workspace/ROS_WS/offboard_practice/build/CMakeFiles 0
+.PHONY : offboard_test/CMakeFiles/offboard.dir/rule
+
+# Convenience name for target.
+offboard: offboard_test/CMakeFiles/offboard.dir/rule
+
+.PHONY : offboard
+
+# clean rule for target.
+offboard_test/CMakeFiles/offboard.dir/clean:
+	$(MAKE) -f offboard_test/CMakeFiles/offboard.dir/build.make offboard_test/CMakeFiles/offboard.dir/clean
+.PHONY : offboard_test/CMakeFiles/offboard.dir/clean
 
 #=============================================================================
 # Target rules for target offboard_test/CMakeFiles/rosgraph_msgs_generate_messages_py.dir

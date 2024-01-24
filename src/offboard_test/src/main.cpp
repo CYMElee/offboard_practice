@@ -22,7 +22,7 @@ void cur_pos(const geometry_msgs::PoseStamped::ConstPtr& msg){
 
 int main(int argc,char **argv)
 {
-    ros::init(argc,argv,"/offboard");
+    ros::init(argc,argv,"offboard");
     ros::NodeHandle nh;
 
     ros::Subscriber state_sub = nh.subscribe<mavros_msgs::State>
